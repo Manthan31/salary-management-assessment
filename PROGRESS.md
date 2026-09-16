@@ -17,7 +17,10 @@ Security and microservices to be added only if genuinely needed.
       FxRate, Employee + EmploymentStatus enum) with indexes on FK/search
       columns, and Spring Data repositories. Schema auto-created via Hibernate
       ddl-auto=update. Verified compile.
-- [ ] **Step 5 — Seed script** (10,000 employees, deterministic)
+- [x] **Step 5 — Seed script** — DatabaseSeeder (CommandLineRunner) + SeedData.
+      Deterministic (fixed seed 42), idempotent (skips if data exists), batched
+      inserts. VERIFIED against SQLite: employee=10000, country=10, department=10,
+      job_role=15, fx_rate=9, distinct_emails=10000, ACTIVE=9178/INACTIVE=822.
 - [ ] **Step 6 — Backend core** (employee CRUD + salary analytics endpoints)
 - [ ] **Step 7 — Backend unit tests** (analytics math, validation, handlers)
 - [ ] **Step 8 — Frontend UI** (employee table, detail/edit, analytics dashboard)
