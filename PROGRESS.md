@@ -10,7 +10,9 @@ Security and microservices to be added only if genuinely needed.
 
 - [x] **Step 1 — Requirements document** (`docs/requirements.md`) + repo init
 - [x] **Step 2 — Architecture & design notes** (`docs/architecture.md`)
-- [ ] **Step 3 — Project scaffold** (backend + frontend skeletons, tooling, test runners)
+- [x] **Step 3 — Project scaffold** — frontend (Angular 20 + Material 20.2.14,
+      azure-blue theme) + backend (Spring Boot 3.3.5 on Java 17, SQLite via
+      Hibernate 6 community dialect, Maven wrapper). Verified compile.
 - [ ] **Step 4 — Database layer** (schema, migrations)
 - [ ] **Step 5 — Seed script** (10,000 employees, deterministic)
 - [ ] **Step 6 — Backend core** (employee CRUD + salary analytics endpoints)
@@ -30,3 +32,11 @@ Security and microservices to be added only if genuinely needed.
   service boundaries at this scale. Security = minimal token/API-key gate for
   the single HR persona. DB = SQLite. UI kit = Angular Material. FX = fixed
   seeded rate table, base USD. See docs/architecture.md.
+- 2026-09-16: ENV FINDINGS: JDK 8 (1.8.0_362) installed, NO global Maven (using
+  mvn wrapper), Node v24 + Angular CLI present (npm must run via cmd due to PS
+  execution policy). Angular analytics disabled globally.
+- 2026-09-16: RESOLVED: Installed JDK 17 (Temurin at
+  "C:\Program Files\Eclipse Adoptium\jdk-17.0.20.101-hotspot") WITHOUT changing
+  system JAVA_HOME/PATH, so existing JDK 8 projects are untouched. Backend now
+  Spring Boot 3.3.5 + Java 17. Builds must set JAVA_HOME to the JDK 17 path
+  explicitly (mvnw). Frontend npm/ng must run via `cmd /c` (PS exec policy).

@@ -2,8 +2,8 @@
 target/
 *.class
 *.jar
-!.mvn/wrapper/maven-wrapper.jar
-.mvn/wrapper/maven-wrapper.properties
+# Keep the Maven wrapper jar (needed to build without a global Maven)
+!**/maven-wrapper.jar
 hs_err_pid*
 
 # SQLite
