@@ -13,7 +13,10 @@ Security and microservices to be added only if genuinely needed.
 - [x] **Step 3 — Project scaffold** — frontend (Angular 20 + Material 20.2.14,
       azure-blue theme) + backend (Spring Boot 3.3.5 on Java 17, SQLite via
       Hibernate 6 community dialect, Maven wrapper). Verified compile.
-- [ ] **Step 4 — Database layer** (schema, migrations)
+- [x] **Step 4 — Database layer** — JPA entities (Country, Department, JobRole,
+      FxRate, Employee + EmploymentStatus enum) with indexes on FK/search
+      columns, and Spring Data repositories. Schema auto-created via Hibernate
+      ddl-auto=update. Verified compile.
 - [ ] **Step 5 — Seed script** (10,000 employees, deterministic)
 - [ ] **Step 6 — Backend core** (employee CRUD + salary analytics endpoints)
 - [ ] **Step 7 — Backend unit tests** (analytics math, validation, handlers)
@@ -35,6 +38,10 @@ Security and microservices to be added only if genuinely needed.
 - 2026-09-16: ENV FINDINGS: JDK 8 (1.8.0_362) installed, NO global Maven (using
   mvn wrapper), Node v24 + Angular CLI present (npm must run via cmd due to PS
   execution policy). Angular analytics disabled globally.
+- 2026-09-16: Step 4 schema strategy: entities are the source of truth via
+  Hibernate ddl-auto=update against a fresh SQLite file. No separate migration
+  tool (Flyway/Liquibase) - unnecessary for a single-DB assessment; noted as a
+  future enhancement if the schema needed versioned production migrations.
 - 2026-09-16: RESOLVED: Installed JDK 17 (Temurin at
   "C:\Program Files\Eclipse Adoptium\jdk-17.0.20.101-hotspot") WITHOUT changing
   system JAVA_HOME/PATH, so existing JDK 8 projects are untouched. Backend now
