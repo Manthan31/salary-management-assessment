@@ -9,7 +9,7 @@ Security and microservices to be added only if genuinely needed.
 ## Steps
 
 - [x] **Step 1 — Requirements document** (`docs/requirements.md`) + repo init
-- [ ] **Step 2 — Architecture & design notes** (data model, API contract, trade-offs)
+- [x] **Step 2 — Architecture & design notes** (`docs/architecture.md`)
 - [ ] **Step 3 — Project scaffold** (backend + frontend skeletons, tooling, test runners)
 - [ ] **Step 4 — Database layer** (schema, migrations)
 - [ ] **Step 5 — Seed script** (10,000 employees, deterministic)
@@ -26,3 +26,7 @@ Security and microservices to be added only if genuinely needed.
 - 2026-09-16: Salary history, full payroll, live FX rates, and bulk import
   deliberately out of scope (see requirements.md §4).
 - Project lives in its own Git repo, separate from the parent workspace.
+- 2026-09-16: Architecture = modular monolith (NOT microservices) — no real
+  service boundaries at this scale. Security = minimal token/API-key gate for
+  the single HR persona. DB = SQLite. UI kit = Angular Material. FX = fixed
+  seeded rate table, base USD. See docs/architecture.md.
