@@ -50,7 +50,14 @@ Security and microservices to be added only if genuinely needed.
       endpoints), analytics-dashboard.spec (load, render, bandPercent, dimension
       switch with mocked services), employee-list.spec (load, paginate, toggle
       status, clear filters). Added `npm run test:ci` (headless single-run).
-- [ ] **Step 10 — Deployment + README** (env config, run instructions)
+- [x] **Step 10 — Deployment + README** — Root README (stack, structure, local
+      run, Docker, tests, API table, config). backend/Dockerfile (multi-stage
+      temurin build via mvnw + JRE runtime), frontend/Dockerfile (node build +
+      nginx serve, /api proxied to backend), frontend/nginx.conf, docker-compose.yml
+      (backend:8080, frontend:4200, persisted SQLite volume), .dockerignore files.
+      VERIFIED: production ng build succeeds -> dist/frontend/browser (matches
+      Dockerfile copy). NOT verified: `docker compose up` (Docker not installed on
+      this machine) - config is standard; both underlying builds pass.
 - [ ] **Step 11 — Final artifacts** (AI prompt log, trade-offs, arch diagram, demo script)
 
 ## Notes / Decisions Log

@@ -1,0 +1,27 @@
+# Runs the whole stack: Spring Boot backend + Angular UI (served by nginx).
+#   docker compose up --build
+# Frontend: http://localhost:4200   Backend API: http://localhost:8080
+services:
+  backend:
+    build: ./backend
+    container_name: salary-backend
+    ports:
+      - "8080:8080"
+    environment:
+      APP_API_TOKEN: dev-hr-token
+      # Allow the browser origin the frontend is served from.
+      APP_CORS_ORIGINS: http://localhost:4200
+    volumes:
+      # Persist the SQLite database across container restarts.
+      - salary-db:/app
+
+  frontend:
+    build: ./frontend
+    container_name: salary-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+volumes:
+  salary-db:
