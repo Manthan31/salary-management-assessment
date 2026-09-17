@@ -35,7 +35,15 @@ Security and microservices to be added only if genuinely needed.
       AnalyticsServiceTest (4: mixed-currency normalization, grouping+sort,
       distribution partition), EmployeeServiceTest (5: create, dup email, missing
       country, not-found, status). Pure unit tests with mocks - no DB, no context.
-- [ ] **Step 8 — Frontend UI** (employee table, detail/edit, analytics dashboard)
+- [x] **Step 8 — Frontend UI** — Angular 20 standalone + Material. Core: models,
+      authInterceptor (X-API-Token), employee.service, analytics.service, env
+      config. Shell with toolbar nav. EmployeeList (Material table, search debounce,
+      country/dept/role/status filters, server-side paginator + sort, status toggle),
+      EmployeeEditDialog (create/edit, validation), AnalyticsDashboard (summary
+      cards, distribution bars, by-country/dept/role toggle table, filters).
+      Installed @angular/animations@20.3.31 (matched core). angular.json prod
+      fileReplacements added. VERIFIED: prod build OK; live run frontend 200 +
+      API reachable (10000 employees, headcount 9178) through the UI token.
 - [ ] **Step 9 — Frontend tests** (key components + data logic)
 - [ ] **Step 10 — Deployment + README** (env config, run instructions)
 - [ ] **Step 11 — Final artifacts** (AI prompt log, trade-offs, arch diagram, demo script)
