@@ -44,7 +44,12 @@ Security and microservices to be added only if genuinely needed.
       Installed @angular/animations@20.3.31 (matched core). angular.json prod
       fileReplacements added. VERIFIED: prod build OK; live run frontend 200 +
       API reachable (10000 employees, headcount 9178) through the UI token.
-- [ ] **Step 9 — Frontend tests** (key components + data logic)
+- [x] **Step 9 — Frontend tests** — 17 specs, all passing (~0.3s, ChromeHeadless).
+      app.spec (shell/nav, rewritten from default), employee.service.spec (URL/
+      params/token via HttpTestingController), analytics.service.spec (filters/
+      endpoints), analytics-dashboard.spec (load, render, bandPercent, dimension
+      switch with mocked services), employee-list.spec (load, paginate, toggle
+      status, clear filters). Added `npm run test:ci` (headless single-run).
 - [ ] **Step 10 — Deployment + README** (env config, run instructions)
 - [ ] **Step 11 — Final artifacts** (AI prompt log, trade-offs, arch diagram, demo script)
 
