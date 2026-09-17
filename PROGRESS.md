@@ -21,7 +21,14 @@ Security and microservices to be added only if genuinely needed.
       Deterministic (fixed seed 42), idempotent (skips if data exists), batched
       inserts. VERIFIED against SQLite: employee=10000, country=10, department=10,
       job_role=15, fx_rate=9, distinct_emails=10000, ACTIVE=9178/INACTIVE=822.
-- [ ] **Step 6 — Backend core** (employee CRUD + salary analytics endpoints)
+- [x] **Step 6 — Backend core** — Employee CRUD (/api/employees: paged+filtered
+      list, get, create, update, PATCH status) via Specifications; Analytics
+      (/api/analytics: summary, by-country, by-department, by-role, distribution)
+      with USD normalization; meta endpoints (/api/meta); API-token security +
+      CORS; global error handler. VERIFIED live: 10000 total, Germany filter=1009,
+      summary headcount 9178 (active), FX conversion correct, distribution sums to
+      9178, 404 on missing. NOTE: AnalyticsService has unused groupBy()+Function
+      import - user rejected removal, leave as-is.
 - [ ] **Step 7 — Backend unit tests** (analytics math, validation, handlers)
 - [ ] **Step 8 — Frontend UI** (employee table, detail/edit, analytics dashboard)
 - [ ] **Step 9 — Frontend tests** (key components + data logic)
