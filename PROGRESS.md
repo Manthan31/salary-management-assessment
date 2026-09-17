@@ -61,7 +61,7 @@ Security and microservices to be added only if genuinely needed.
 - [x] **Step 11 — Final artifacts** — docs/architecture-diagram.md (Mermaid:
       system, ER, sequence, analytics flow), docs/trade-offs.md (10 decisions +
       summary table), docs/ai-workflow.md (method, prompts, where human judgment
-      steered/corrected AI), docs/demo-script.md (3-5 min walkthrough + checklist).
+      steered/corrected AI). (demo-script.md removed on request.)
 
 ## Notes / Decisions Log
 
