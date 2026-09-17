@@ -58,7 +58,10 @@ Security and microservices to be added only if genuinely needed.
       VERIFIED: production ng build succeeds -> dist/frontend/browser (matches
       Dockerfile copy). NOT verified: `docker compose up` (Docker not installed on
       this machine) - config is standard; both underlying builds pass.
-- [ ] **Step 11 — Final artifacts** (AI prompt log, trade-offs, arch diagram, demo script)
+- [x] **Step 11 — Final artifacts** — docs/architecture-diagram.md (Mermaid:
+      system, ER, sequence, analytics flow), docs/trade-offs.md (10 decisions +
+      summary table), docs/ai-workflow.md (method, prompts, where human judgment
+      steered/corrected AI), docs/demo-script.md (3-5 min walkthrough + checklist).
 
 ## Notes / Decisions Log
 
