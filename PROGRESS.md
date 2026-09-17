@@ -29,7 +29,12 @@ Security and microservices to be added only if genuinely needed.
       summary headcount 9178 (active), FX conversion correct, distribution sums to
       9178, 404 on missing. NOTE: AnalyticsService has unused groupBy()+Function
       import - user rejected removal, leave as-is.
-- [ ] **Step 7 — Backend unit tests** (analytics math, validation, handlers)
+- [x] **Step 7 — Backend unit tests** — 25 tests, all passing, ~6s, deterministic.
+      SalaryStatisticsTest (10: median odd/even/order-independent/empty, avg, sum,
+      min/max), CurrencyConverterTest (6: load/convert/round/errors, Mockito),
+      AnalyticsServiceTest (4: mixed-currency normalization, grouping+sort,
+      distribution partition), EmployeeServiceTest (5: create, dup email, missing
+      country, not-found, status). Pure unit tests with mocks - no DB, no context.
 - [ ] **Step 8 — Frontend UI** (employee table, detail/edit, analytics dashboard)
 - [ ] **Step 9 — Frontend tests** (key components + data logic)
 - [ ] **Step 10 — Deployment + README** (env config, run instructions)
